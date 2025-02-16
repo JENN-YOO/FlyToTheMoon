@@ -44,7 +44,7 @@ pipeline {
         stage('Run Spring Container') {
             steps {
                 // 빌드한 이미지로 애플리케이션 컨테이너 실행
-                sh 'docker run -d -p 8888:8888 —network jonnee-network —name spring-docker-test rheonik/study-1.1'
+                sh 'docker run -d -p 8888:8888 —network jonnee-network —name spring-docker-test jonneedev/study-0.0.1-snapshot.jar'
             }
         }
     }
