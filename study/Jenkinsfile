@@ -32,7 +32,7 @@ pipeline {
             steps {
                 // 동일 이름의 기존 컨테이너가 있다면 삭제
                 sh 'docker rm -f mysql-test || true'
-                sh 'docker rm -f spring-docker-test || true'
+                sh 'docker rm -f docker-test || true'
             }
         }
         stage('Run MySQL Container') {
