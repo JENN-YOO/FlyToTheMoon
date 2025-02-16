@@ -18,6 +18,7 @@ public class UserController {
         return userService.saveUser(user);
     }
 
+    //test
     // 사용자 조회
     @GetMapping("/{id}")
     public User getUser(@PathVariable Long id) {
