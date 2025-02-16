@@ -31,14 +31,8 @@ pipeline {
         stage('Cleanup Existing Containers') {
             steps {
                 // 동일 이름의 기존 컨테이너가 있다면 삭제
-                sh 'docker rm -f mysql-test || true'
+
                 sh 'docker rm -f docker-test || true'
-            }
-        }
-        stage('Run MySQL Container') {
-            steps {
-                // MySQL 컨테이너 실행
-                sh 'docker run --network jonnee-network --name mysql-test -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=testdb -p 3306:3306 -d mysql:8.0'
             }
         }
         stage('Run Spring Container') {
