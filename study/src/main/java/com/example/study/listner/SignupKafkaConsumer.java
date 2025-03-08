@@ -7,8 +7,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class SignupKafkaConsumer {
 
-    @KafkaListener(topics = "user-email", groupId = "study-group", containerFactory =  "kafkaListnerContainerFactory")
-    public void consume(ConsumerRecord<String, String> consumerRecord) {
-        System.out.println("Kafka consumer received: " + consumerRecord.toString());
+    @KafkaListener(topics = "user-email", groupId = "study-group", containerFactory = "kafkaListenerContainerFactory")
+    public void consume(ConsumerRecord<String, String> consumerRecord) {//3
+        System.out.println("Kafka에서 메시지 수신: " + consumerRecord.toString());
+        //emailService.sendConfirmationEmail(email);
     }
 }
