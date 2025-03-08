@@ -9,6 +9,8 @@ spring:
       ddl-auto: update  # 자동 테이블 생성
     show-sql: true      # 실행되는 SQL 출력
 
+  server:
+    port: 8888
 
 #  datasource:
 #    url: jdbc:postgresql://localhost:5432/yourdbname
